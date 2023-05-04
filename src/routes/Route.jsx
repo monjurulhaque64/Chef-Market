@@ -3,6 +3,7 @@ import Home from "../pages/Home/Home/Home";
 import Main from "../Layouts/Main";
 import SingIn from "../pages/shere/SingIn/SingIn";
 import SingUp from "../pages/shere/SingUp/SingUp";
+import Chef from "../pages/Home/Chef/Chef";
 
 
 
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         {
           path:'/singup',
           element: <SingUp></SingUp>
+        },
+        {
+          path: '/chef',
+          element: <Chef></Chef>,
+          
         }
       ]
     }
