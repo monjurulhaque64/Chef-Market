@@ -4,6 +4,7 @@ import Footer from '../../shere/Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import Header from '../../Header/Header';
 import Chef from '../Chef/Chef';
+import Creators from '../Creators/Creators';
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
             <NavBar></NavBar>
             <Header></Header>
             <Chef></Chef>
+            <Creators></Creators>
             <Footer></Footer>
         </div>
     );
