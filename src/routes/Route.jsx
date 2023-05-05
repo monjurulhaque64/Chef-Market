@@ -6,6 +6,7 @@ import SingUp from "../pages/shere/SingUp/SingUp";
 import Chef from "../pages/Home/Chef/Chef";
 import ChefPage from "../pages/ChefPage/ChefPage";
 import ChefLayout from "../Layouts/ChefLayout";
+import NotFoundPage from "../pages/shere/NotFoundPage/NotFoundPage";
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
 
         }
       ]
+    },
+    {
+      path: '*',
+      element: <NotFoundPage></NotFoundPage>
     }
   ])
 
