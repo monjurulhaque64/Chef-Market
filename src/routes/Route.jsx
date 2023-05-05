@@ -8,6 +8,7 @@ import ChefPage from "../pages/ChefPage/ChefPage";
 import ChefLayout from "../Layouts/ChefLayout";
 import NotFoundPage from "../pages/shere/NotFoundPage/NotFoundPage";
 import PriveteRoute from "./PriveteRoute";
+import Blog from "../pages/Blog/Blog";
 
 
 
@@ -38,12 +39,17 @@ const router = createBrowserRouter([
           path: ':id',
           element: <ChefPage></ChefPage>,
 
-        }
+        },
+        
       ]
     },
     {
       path: '*',
       element: <NotFoundPage></NotFoundPage>
+    },
+    {
+      path: '/blog',
+      element: <PriveteRoute><Blog></Blog></PriveteRoute>
     }
   ])
 
