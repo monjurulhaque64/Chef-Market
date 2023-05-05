@@ -2,7 +2,7 @@ import React from 'react';
 import { BiLike } from 'react-icons/bi';
 
 const ChefCard = ({ chef }) => {
-  const { chefName, chefPicture, likes, yearsOfExperience, numberOfRecipes } = chef;
+  const { chefName, chefPicture, likes, yearsOfExperience, numberOfRecipes, _id } = chef;
 
   return (
       <div className="card w-96 h-96 bg-base-100 shadow-xl overflow-hidden mx-auto mt-10 mb-10">
@@ -15,7 +15,7 @@ const ChefCard = ({ chef }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold text-green-500"><BiLike style={{ display: 'inline-block', verticalAlign: 'middle' }}></BiLike>{likes}</span>
-            <a href="#" className="btn btn-outline btn-success">View Recipes</a>
+            <a href={_id} className="btn btn-outline btn-success">View Recipes</a>
           </div>
         </div>
       </div>

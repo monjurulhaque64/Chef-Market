@@ -4,6 +4,7 @@ import Main from "../Layouts/Main";
 import SingIn from "../pages/shere/SingIn/SingIn";
 import SingUp from "../pages/shere/SingUp/SingUp";
 import Chef from "../pages/Home/Chef/Chef";
+import ChefPage from "../pages/ChefPage/ChefPage";
 
 
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
           path: '/chef',
           element: <Chef></Chef>,
           
+        },
+        {
+          path:'/chef/:id',
+          element: <ChefPage></ChefPage>
         }
       ]
     }

@@ -6,6 +6,7 @@ import Header from '../../Header/Header';
 import Chef from '../Chef/Chef';
 import Creators from '../Creators/Creators';
 import Slider from '../Slider/Slider';
+import WhyTry from '../WhyTry/WhyTry';
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Chef></Chef>
             <Creators></Creators>
             <Slider></Slider>
+            <WhyTry></WhyTry>
             <Footer></Footer>
         </div>
     );

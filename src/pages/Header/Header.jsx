@@ -8,7 +8,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header" style={styles}>
+    <div className="header rounded-lg mt-6" style={styles}>
       <h1 className='text-emerald-700/100 text-base font-mono font-bold lg:text-4xl
       '>I'm not a chef. But I'm passionate about food - 
         <br />
