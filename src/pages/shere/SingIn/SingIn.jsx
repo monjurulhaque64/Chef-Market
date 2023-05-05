@@ -5,10 +5,10 @@ import logo from '../../../assets/logo.462580ec6c5e.png';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const SingIn = () => {
-    const { singIn, singInGoogle } = useContext(AuthContext);
+    const { singIn, singInGoogle, singInGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -48,6 +48,18 @@ const SingIn = () => {
             setError(error.message)
         })
 
+    }
+    const handleGithub = () =>{
+        const provider = new GithubAuthProvider();
+        singInGithub(provider)
+        .then(result => {
+            const logedWithGithub = result;
+            navigate(from, {replace: true})
+        })
+        .catch(error=>{
+            console.log(error)
+            setError(error.message)
+        })
     }
 
     return (
@@ -91,7 +103,7 @@ const SingIn = () => {
                                         <button onClick={handleGoogle} className="btn btn-outline btn-primary"><FaGoogle className='mr-2 '></FaGoogle>COUNTINUE WITH GOOGLE </button>
                                     </div>
                                     <div className="form-control mt-2">
-                                        <button className="btn btn-outline btn-primary"><FaGithub className='mr-2 '></FaGithub> CONTINUE WITH GITHUB</button>
+                                        <button onClick={handleGithub} className="btn btn-outline btn-primary"><FaGithub className='mr-2 '></FaGithub> CONTINUE WITH GITHUB</button>
                                     </div>
 
                                 </div>

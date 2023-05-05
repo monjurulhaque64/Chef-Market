@@ -4,7 +4,7 @@ import logo from '../../../assets/logo.462580ec6c5e.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+            <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-32">
                 <img src={logo} alt="" />
                 <div className="grid grid-flow-col gap-4">
                     <a className="link link-hover">Our Content</a>

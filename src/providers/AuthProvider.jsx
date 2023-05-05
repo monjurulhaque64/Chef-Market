@@ -29,6 +29,11 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, provider);
         setLoading(false);
     }
+
+    const singInGithub =(provider) =>{
+        return signInWithPopup (auth, provider);
+        setLoading(false);
+    }
     useEffect(()=>{
        const unsubscribe =  onAuthStateChanged(auth, loggedUser=>{
             setUser(loggedUser);
@@ -45,7 +50,8 @@ const AuthProvider = ({children}) => {
         createUser,
         singIn,
         logOut,
-        singInGoogle
+        singInGoogle,
+        singInGithub
 
     }
     return (

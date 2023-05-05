@@ -61,7 +61,7 @@ const ChefPage = () => {
                                 <h2 className="text-center text-lg font-medium mb-2">{recipe.name}</h2>
                                 <p className='font-bold text-green-500'>Ingredients:</p>
                                 <p className="text-gray-600 mb-4">{recipe.ingredients.join(', ')}</p>
-                                <p className='font-bold text-green-500'>CookingMethod:</p>
+                                <p className='font-bold text-green-500'>Cooking Method:</p>
                                 <p className="text-gray-600 mb-4">{recipe.cookingMethod}</p>
                                 <div className="flex items-center">
                                     <span className='flex gap-2'><Rating style={{ maxWidth: 100 }} value={recipe.rating} readOnly />  {recipe.rating}</span>
