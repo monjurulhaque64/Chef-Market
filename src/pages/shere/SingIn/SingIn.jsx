@@ -3,11 +3,14 @@ import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 import logo from '../../../assets/logo.462580ec6c5e.png';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const SingIn = () => {
     const { singIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const [error , setError] = useState('')
 
@@ -22,6 +25,7 @@ const SingIn = () => {
         .then(result =>{
             const logedUser = result;
             console.log(logedUser)
+            navigate(from, {replace: true})
             form.reset();
         })
         .catch(error=>{

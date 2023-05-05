@@ -7,6 +7,7 @@ import Chef from "../pages/Home/Chef/Chef";
 import ChefPage from "../pages/ChefPage/ChefPage";
 import ChefLayout from "../Layouts/ChefLayout";
 import NotFoundPage from "../pages/shere/NotFoundPage/NotFoundPage";
+import PriveteRoute from "./PriveteRoute";
 
 
 
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
     },
     {
       path: 'chef',
-      element: <ChefLayout></ChefLayout>,
+      element: <PriveteRoute><ChefLayout></ChefLayout></PriveteRoute>,
       children: [
         {
           path: ':id',
