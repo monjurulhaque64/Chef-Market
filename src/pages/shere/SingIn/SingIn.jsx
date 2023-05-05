@@ -5,9 +5,10 @@ import logo from '../../../assets/logo.462580ec6c5e.png';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SingIn = () => {
-    const { singIn } = useContext(AuthContext);
+    const { singIn, singInGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -34,6 +35,21 @@ const SingIn = () => {
         })
 
     }
+
+    const handleGoogle = () =>{
+        const provider = new GoogleAuthProvider();
+        singInGoogle(provider)
+        .then(result => {
+            const logedWithGoogle = result;
+            navigate(from, {replace: true})
+        })
+        .catch(error=>{
+            console.log(error)
+            setError(error.message)
+        })
+
+    }
+
     return (
         <div className='container mx-auto'>
             <NavBar></NavBar>
@@ -72,7 +88,7 @@ const SingIn = () => {
                                 <div className="form-control mt-6 text-center mx-auto card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                     <h4 className='text-bold'>OR</h4>
                                     <div className="form-control mt-6">
-                                        <button className="btn btn-outline btn-primary"><FaGoogle className='mr-2 '></FaGoogle>COUNTINUE WITH GOOGLE </button>
+                                        <button onClick={handleGoogle} className="btn btn-outline btn-primary"><FaGoogle className='mr-2 '></FaGoogle>COUNTINUE WITH GOOGLE </button>
                                     </div>
                                     <div className="form-control mt-2">
                                         <button className="btn btn-outline btn-primary"><FaGithub className='mr-2 '></FaGithub> CONTINUE WITH GITHUB</button>
