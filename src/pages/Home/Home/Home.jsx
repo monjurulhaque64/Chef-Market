@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../../Header/Header';
 import Chef from '../Chef/Chef';
 import Creators from '../Creators/Creators';
+import Slider from '../Slider/Slider';
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Header></Header>
             <Chef></Chef>
             <Creators></Creators>
+            <Slider></Slider>
             <Footer></Footer>
         </div>
     );
