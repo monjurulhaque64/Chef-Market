@@ -18,7 +18,7 @@ const ChefPage = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/chef/${id}`)
+        fetch(`https://chef-recipe-server-monjurulhoque64-gmailcom.vercel.app/chef/${id}`)
             .then(res => res.json())
             .then(data => setChef(data))
             .catch(error => console.log(error))
