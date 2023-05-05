@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiLike } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
   const { chefName, chefPicture, likes, yearsOfExperience, numberOfRecipes, _id } = chef;
@@ -15,7 +16,7 @@ const ChefCard = ({ chef }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold text-green-500"><BiLike style={{ display: 'inline-block', verticalAlign: 'middle' }}></BiLike>{likes}</span>
-            <a href={_id} className="btn btn-outline btn-success">View Recipes</a>
+            <Link to={`/chef/${_id}`}><a className="btn btn-outline btn-success">View Recipes</a></Link>
           </div>
         </div>
       </div>
